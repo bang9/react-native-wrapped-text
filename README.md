@@ -28,6 +28,14 @@ import WrappedText from 'react-native-wrapped-text';
 </WrappedText>
 ```
 
+## Support Props
+|Prop               |Type       |Default    |
+|:---               |:---       |:---       |
+|debug?             |boolean    |-          |
+|containerStyle?    |ViewStyle  |-          |
+|rowWrapperStyle?   |ViewStyle  |-          |
+|textStyle?         |TextStyle  |-          |
+
 
 ## Example
 ```jsx
