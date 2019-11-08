@@ -1,0 +1,22 @@
+{
+  "name": "react-native-wrapped-text",
+  "version": "1.0.0",
+  "description": "react native word wrap text component for support korean",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bang9 <gusrn1423@naver.com> (https://github.com/bang9)",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-native": "^0.61.4"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.22",
+    "typescript": "^3.7.2"
+  },
+  "keywords": []
+}
