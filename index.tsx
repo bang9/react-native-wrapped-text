@@ -3,7 +3,8 @@ import {Text, View, StyleProp, ViewStyle, StyleSheet, TextStyle} from 'react-nat
 
 interface IProps {
     debug?:boolean;
-    style?:StyleProp<ViewStyle>;
+    containerStyle?:StyleProp<ViewStyle>;
+    rowWrapperStyle?:StyleProp<ViewStyle>;
     textStyle?:StyleProp<TextStyle>;
 }
 
@@ -20,7 +21,7 @@ function getTextMatrix(text:string) {
 }
 
 //@ts-ignore
-const WrappedText:React.FC<IProps> = ({debug, textStyle, style, children}) => {
+const WrappedText:React.FC<IProps> = ({debug, containerStyle, rowWrapperStyle, textStyle, children}) => {
     if(!children){
         return null;
     }
@@ -32,7 +33,7 @@ const WrappedText:React.FC<IProps> = ({debug, textStyle, style, children}) => {
             <View
                 style={[
                     styles.container,
-                    style,
+                    containerStyle,
                     getDebugStyle(debug)
                 ]}
             >
@@ -43,6 +44,7 @@ const WrappedText:React.FC<IProps> = ({debug, textStyle, style, children}) => {
                                 key={`${rowText}-${rowIndex}`}
                                 style={[
                                     styles.rowWrapper,
+                                    rowWrapperStyle,
                                     getDebugStyle(debug)
                                 ]}
                             >
