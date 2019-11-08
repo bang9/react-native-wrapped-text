@@ -21,6 +21,10 @@ function getTextMatrix(text:string) {
 
 //@ts-ignore
 const WrappedText:React.FC<IProps> = ({debug, textStyle, style, children}) => {
+    if(!children){
+        return null;
+    }
+
     function renderWrappedText(text:string){
         const textMatrix = getTextMatrix(text);
 
