@@ -12,6 +12,9 @@ function getTextMatrix(text) {
 //@ts-ignore
 var WrappedText = function (_a) {
     var debug = _a.debug, textStyle = _a.textStyle, style = _a.style, children = _a.children;
+    if (!children) {
+        return null;
+    }
     function renderWrappedText(text) {
         var textMatrix = getTextMatrix(text);
         return (<View style={[
