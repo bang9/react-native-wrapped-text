@@ -11,7 +11,7 @@ function getTextMatrix(text) {
 }
 //@ts-ignore
 var WrappedText = function (_a) {
-    var debug = _a.debug, textStyle = _a.textStyle, style = _a.style, children = _a.children;
+    var debug = _a.debug, containerStyle = _a.containerStyle, rowWrapperStyle = _a.rowWrapperStyle, textStyle = _a.textStyle, children = _a.children;
     if (!children) {
         return null;
     }
@@ -19,12 +19,13 @@ var WrappedText = function (_a) {
         var textMatrix = getTextMatrix(text);
         return (<View style={[
             styles.container,
-            style,
+            containerStyle,
             getDebugStyle(debug)
         ]}>
                 {textMatrix.map(function (rowText, rowIndex) {
             return (<View key={rowText + "-" + rowIndex} style={[
                 styles.rowWrapper,
+                rowWrapperStyle,
                 getDebugStyle(debug)
             ]}>
                                 {rowText.map(function (colText, colIndex) {
