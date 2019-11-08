@@ -10,7 +10,7 @@ function getTextMatrix(text) {
     return text.split('\n').map(function (row) { return row.split(' '); });
 }
 //@ts-ignore
-var WordWrappedText = function (_a) {
+var WrappedText = function (_a) {
     var debug = _a.debug, textStyle = _a.textStyle, style = _a.style, children = _a.children;
     function renderWrappedText(text) {
         var textMatrix = getTextMatrix(text);
@@ -64,4 +64,4 @@ var styles = StyleSheet.create({
         borderColor: 'rgba(255,60,60,0.7)'
     }
 });
-export default WordWrappedText;
+export default WrappedText;

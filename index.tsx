@@ -20,7 +20,7 @@ function getTextMatrix(text:string) {
 }
 
 //@ts-ignore
-const WordWrappedText:React.FC<IProps> = ({debug, textStyle, style, children}) => {
+const WrappedText:React.FC<IProps> = ({debug, textStyle, style, children}) => {
     function renderWrappedText(text:string){
         const textMatrix = getTextMatrix(text);
 
@@ -94,4 +94,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default WordWrappedText;
+export default WrappedText;

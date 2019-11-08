@@ -5,5 +5,5 @@ interface IProps {
     style?: StyleProp<ViewStyle>;
     textStyle?: StyleProp<TextStyle>;
 }
-declare const WordWrappedText: React.FC<IProps>;
-export default WordWrappedText;
+declare const WrappedText: React.FC<IProps>;
+export default WrappedText;
