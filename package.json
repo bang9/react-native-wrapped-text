@@ -1,6 +1,6 @@
 {
   "name": "react-native-wrapped-text",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "react native word wrap text component for support korean",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -15,7 +15,7 @@
   },
   "author": "bang9 <gusrn1423@naver.com> (https://github.com/bang9)",
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "react": "*",
     "react-native": ">=0.54"
   },
