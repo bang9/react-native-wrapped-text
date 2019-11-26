@@ -50,7 +50,7 @@ const WrappedText:React.FC<IProps> = ({debug, containerStyle, rowWrapperStyle, t
                             >
                                 {
                                     rowText.map((colText,colIndex) =>
-                                        colText !== "" &&
+                                        (colText !== "" || (rowText.length === 1 && colText === "")) &&
                                         <Text
                                             key={`${colText}-${colIndex}`}
                                             style={[textStyle, getDebugStyle(debug)]}
