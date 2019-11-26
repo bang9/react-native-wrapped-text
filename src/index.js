@@ -29,7 +29,7 @@ var WrappedText = function (_a) {
                 getDebugStyle(debug)
             ]}>
                                 {rowText.map(function (colText, colIndex) {
-                return colText !== "" &&
+                return (colText !== "" || (rowText.length === 1 && colText === "")) &&
                     <Text key={colText + "-" + colIndex} style={[textStyle, getDebugStyle(debug)]}>
                                             {colText + getWordSpace(rowText.length, colIndex)}
                                         </Text>;
