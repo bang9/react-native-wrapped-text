@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleProp, ViewStyle, TextStyle } from 'react-native';
+import React from "react";
+import { StyleProp, ViewStyle, TextStyle } from "react-native";
 interface IProps {
     debug?: boolean;
     containerStyle?: StyleProp<ViewStyle>;
