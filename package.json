@@ -10,7 +10,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "deploy": "tsc && npm publish",
+        "deploy": "tsc && yarn fix && npm publish",
         "fix": "yarn fix:tslint && yarn fix:prettier",
         "fix:tslint": "tslint --project tsconfig.json --fix",
         "fix:prettier": "prettier --write \"**/*.{ts,tsx,js}\"",
