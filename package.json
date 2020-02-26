@@ -1,6 +1,6 @@
 {
     "name": "react-native-wrapped-text",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "react native word wrap text component for support korean",
     "main": "./src/index.js",
     "types": "./src/index.d.ts",
@@ -10,7 +10,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "deploy": "tsc && yarn fix && npm publish",
+        "deploy": "yarn fix && tsc && npm publish",
         "fix": "yarn fix:tslint && yarn fix:prettier",
         "fix:tslint": "tslint --project tsconfig.json --fix",
         "fix:prettier": "prettier --write \"**/*.{ts,tsx,js}\"",

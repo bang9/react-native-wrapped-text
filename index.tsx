@@ -13,6 +13,7 @@ interface IProps {
     containerStyle?: StyleProp<ViewStyle>;
     rowWrapperStyle?: StyleProp<ViewStyle>;
     textStyle?: StyleProp<TextStyle>;
+    TextComponent?: typeof Text;
 }
 
 function getDebugStyle(debug?: boolean) {
@@ -33,13 +34,18 @@ const WrappedText: React.FC<IProps> = ({
     containerStyle,
     rowWrapperStyle,
     textStyle,
-    children
+    children,
+    TextComponent
 }) => {
     if (!children) {
         return null;
     }
 
-    function renderWrappedText(text: string) {
+    const TextRenderer = React.useMemo(() => TextComponent || Text, [
+        TextComponent
+    ]);
+
+    const renderWrappedText = React.useCallback((text: string) => {
         const textMatrix = getTextMatrix(text);
 
         return (
@@ -61,7 +67,7 @@ const WrappedText: React.FC<IProps> = ({
                                     (colText !== "" ||
                                         (rowText.length === 1 &&
                                             colText === "")) && (
-                                        <Text
+                                        <TextRenderer
                                             key={`${colText}-${colIndex}`}
                                             style={[
                                                 textStyle,
@@ -73,7 +79,7 @@ const WrappedText: React.FC<IProps> = ({
                                                     rowText.length,
                                                     colIndex
                                                 )}
-                                        </Text>
+                                        </TextRenderer>
                                     )
                             )}
                         </View>
@@ -81,7 +87,7 @@ const WrappedText: React.FC<IProps> = ({
                 })}
             </View>
         );
-    }
+    }, []);
 
     if (typeof children === "string") {
         return renderWrappedText(children);

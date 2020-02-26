@@ -17,11 +17,18 @@ var WrappedText = function(_a) {
         containerStyle = _a.containerStyle,
         rowWrapperStyle = _a.rowWrapperStyle,
         textStyle = _a.textStyle,
-        children = _a.children;
+        children = _a.children,
+        TextComponent = _a.TextComponent;
     if (!children) {
         return null;
     }
-    function renderWrappedText(text) {
+    var TextRenderer = React.useMemo(
+        function() {
+            return TextComponent || Text;
+        },
+        [TextComponent]
+    );
+    var renderWrappedText = React.useCallback(function(text) {
         var textMatrix = getTextMatrix(text);
         return (
             <View
@@ -42,7 +49,7 @@ var WrappedText = function(_a) {
                                     (colText !== "" ||
                                         (rowText.length === 1 &&
                                             colText === "")) && (
-                                        <Text
+                                        <TextRenderer
                                             key={colText + "-" + colIndex}
                                             style={[
                                                 textStyle,
@@ -54,7 +61,7 @@ var WrappedText = function(_a) {
                                                     rowText.length,
                                                     colIndex
                                                 )}
-                                        </Text>
+                                        </TextRenderer>
                                     )
                                 );
                             })}
@@ -63,7 +70,7 @@ var WrappedText = function(_a) {
                 })}
             </View>
         );
-    }
+    }, []);
     if (typeof children === "string") {
         return renderWrappedText(children);
     }
