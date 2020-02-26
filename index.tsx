@@ -5,7 +5,8 @@ import {
     StyleProp,
     ViewStyle,
     StyleSheet,
-    TextStyle
+    TextStyle,
+    TextProps
 } from "react-native";
 
 interface IProps {
@@ -13,7 +14,7 @@ interface IProps {
     containerStyle?: StyleProp<ViewStyle>;
     rowWrapperStyle?: StyleProp<ViewStyle>;
     textStyle?: StyleProp<TextStyle>;
-    TextComponent?: typeof Text;
+    TextComponent?: typeof Text | React.FC<TextProps>;
 }
 
 function getDebugStyle(debug?: boolean) {
