@@ -46,49 +46,56 @@ const WrappedText: React.FC<IProps> = ({
         TextComponent
     ]);
 
-    const renderWrappedText = React.useCallback((text: string) => {
-        const textMatrix = getTextMatrix(text);
+    const renderWrappedText = React.useCallback(
+        (text: string) => {
+            const textMatrix = getTextMatrix(text);
 
-        return (
-            <View
-                style={[styles.container, containerStyle, getDebugStyle(debug)]}
-            >
-                {textMatrix.map((rowText, rowIndex) => {
-                    return (
-                        <View
-                            key={`${rowText}-${rowIndex}`}
-                            style={[
-                                styles.rowWrapper,
-                                rowWrapperStyle,
-                                getDebugStyle(debug)
-                            ]}
-                        >
-                            {rowText.map(
-                                (colText, colIndex) =>
-                                    (colText !== "" ||
-                                        (rowText.length === 1 &&
-                                            colText === "")) && (
-                                        <TextRenderer
-                                            key={`${colText}-${colIndex}`}
-                                            style={[
-                                                textStyle,
-                                                getDebugStyle(debug)
-                                            ]}
-                                        >
-                                            {colText +
-                                                getWordSpace(
-                                                    rowText.length,
-                                                    colIndex
-                                                )}
-                                        </TextRenderer>
-                                    )
-                            )}
-                        </View>
-                    );
-                })}
-            </View>
-        );
-    }, []);
+            return (
+                <View
+                    style={[
+                        styles.container,
+                        containerStyle,
+                        getDebugStyle(debug)
+                    ]}
+                >
+                    {textMatrix.map((rowText, rowIndex) => {
+                        return (
+                            <View
+                                key={`${rowText}-${rowIndex}`}
+                                style={[
+                                    styles.rowWrapper,
+                                    rowWrapperStyle,
+                                    getDebugStyle(debug)
+                                ]}
+                            >
+                                {rowText.map(
+                                    (colText, colIndex) =>
+                                        (colText !== "" ||
+                                            (rowText.length === 1 &&
+                                                colText === "")) && (
+                                            <TextRenderer
+                                                key={`${colText}-${colIndex}`}
+                                                style={[
+                                                    textStyle,
+                                                    getDebugStyle(debug)
+                                                ]}
+                                            >
+                                                {colText +
+                                                    getWordSpace(
+                                                        rowText.length,
+                                                        colIndex
+                                                    )}
+                                            </TextRenderer>
+                                        )
+                                )}
+                            </View>
+                        );
+                    })}
+                </View>
+            );
+        },
+        [debug, containerStyle, rowWrapperStyle, textStyle, TextComponent]
+    );
 
     if (typeof children === "string") {
         return renderWrappedText(children);

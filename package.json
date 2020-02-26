@@ -1,6 +1,6 @@
 {
     "name": "react-native-wrapped-text",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "react native word wrap text component for support korean",
     "main": "./src/index.js",
     "types": "./src/index.d.ts",
