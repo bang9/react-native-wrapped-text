@@ -24,7 +24,7 @@
         }
     },
     "author": "bang9 <gusrn1423@naver.com> (https://github.com/bang9)",
-    "license": "ISC",
+    "license": "MIT",
     "peerDependencies": {
         "react": "*",
         "react-native": ">=0.54"
