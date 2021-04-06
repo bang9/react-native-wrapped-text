@@ -4,8 +4,10 @@
 <span class="npmdownloads"><a href="https://npmjs.org/package/react-native-wrapped-text" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/react-native-wrapped-text.svg" alt="NPM downloads" /></a></span>
 
 # react-native-wrapped-text
-
 react native word wrap text component for support korean
+
+현재 한글 개행 PR 합병을 대기중입니다.
+> [facebook/react-native#31272](https://github.com/facebook/react-native/pull/31272)
 
 ## Motivation
 
