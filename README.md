@@ -6,7 +6,7 @@
 # react-native-wrapped-text
 react native word wrap text component for support korean
 
-현재 한글 개행 PR 합병을 대기중입니다.
+한글 개행 PR이 머지되었습니다.
 > [facebook/react-native#31272](https://github.com/facebook/react-native/pull/31272)
 
 ## Motivation
